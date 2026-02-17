@@ -3,5 +3,12 @@ name = "beltane-gui"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "beltane-gui"
+path = "src/main.rs"
+
 [dependencies]
 beltane-ports = { path = "../beltane-ports" }
+beltane-application = { path = "../beltane-application" }
+beltane-runtime = { path = "../beltane-runtime" }
+eframe = "0.29"

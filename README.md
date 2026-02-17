@@ -10,7 +10,7 @@ This workspace scaffolds a strict hexagonal architecture where the core music lo
 - `beltane-ports`: command/event/effect contracts and port traits.
 - `beltane-application`: use-case orchestration (`command -> events + effects + view`).
 - `beltane-runtime`: wiring layer that dispatches effects to adapters.
-- `beltane-gui`: GUI adapter boundary (currently a thin action mapper stub).
+- `beltane-gui`: GUI adapter boundary using egui/eframe (transport controls + animated waveform, adapter mapping in `src/lib.rs`).
 
 ## First Vertical Slice
 

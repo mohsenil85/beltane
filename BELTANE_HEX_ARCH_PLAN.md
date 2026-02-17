@@ -103,12 +103,9 @@ Each module must be independently testable with fake ports.
 
 ## GUI Strategy
 
-- Beltane must ship with GUI, but GUI library should remain swappable.
-- Choose library early (e.g., `iced`, `egui`, `slint`) based on desired tradeoff:
-  - `iced`: strongest architectural fit with message/update model.
-  - `egui`: fastest iteration and tooling ergonomics.
-  - `slint`: stronger product UI polish path.
-- Regardless of choice, GUI acts as inbound adapter only.
+- **Decision: egui/eframe selected** (see `BELTANE_GUI_DECISION.md` for full rationale).
+- Spike compared iced, egui, and slint on the same transport + waveform app; egui won on rendering directness, brevity, and iteration speed.
+- GUI library should remain swappable via hex architecture — GUI acts as inbound adapter only.
 
 ## Feature/Philosophy Parity Scope
 
@@ -200,7 +197,7 @@ Philosophy parity means preserving:
 1. Add second vertical slice: `SetBpm` with domain validation and audio sync effect.
 2. Define standard error model for command handling (`Result<HandleOutput, DomainError>` pattern).
 3. Add adapter crate stubs for audio and persistence to lock interfaces early.
-4. Select GUI library and create minimal event loop adapter using existing command mapping boundary.
+4. ~~Select GUI library~~ Done — egui/eframe selected, spike promoted into `crates/beltane-gui/` (see `BELTANE_GUI_DECISION.md`).
 
 ## Working Principles
 

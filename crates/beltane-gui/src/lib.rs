@@ -1,5 +1,4 @@
-//! GUI adapter boundary for Beltane.
-//! This crate intentionally stays thin until a concrete GUI library is selected.
+//! GUI adapter boundary for Beltane (egui/eframe).
 
 use beltane_ports::Command;
 
